@@ -1,0 +1,8 @@
+* Modulation även i DAC A
+* Ett rent CW-läge
+* Ställbar RX-gain
+* Ställbar TX-gain i fler steg
+* CW TX timer
+* Ext ref
+* FM
+* Audio RX-filter för CW narrow

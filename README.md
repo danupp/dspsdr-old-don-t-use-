@@ -13,7 +13,7 @@ In 2016 a new version of the FPGA-board, with a Cyclone IV, was developed togeth
 
 Communication with the FPGA board is over I2C or UART.
 
-Please refer to [register-map.org](register-map.org) for more information.
+Please refer to [register-map.org](fpga/register-map.org) for more information.
 
 
 ## More information

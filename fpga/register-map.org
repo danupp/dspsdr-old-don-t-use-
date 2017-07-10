@@ -14,48 +14,48 @@ Example code can be found in the avr/ and gtk/ directory of this repository.
 
 Variable values are explained in the table further down.
 
-| Byte | Bit | Value       | Value    | Value      |
-|------+-----+-------------+----------+------------|
-|    0 |  39 | 0           | 1        | 0          |
-|      |  38 | 1           | 1        | 0          |
-|      |  37 | ssb_am      | reserved | reserved   |
-|      |  36 | wide_narrow | reserved | reserved   |
-|      |  35 | usb_lsb     | reserved | reserved   |
-|      |  34 | tx          | reserved | reserved   |
-|      |  33 | key         | reserved | reserved   |
-|      |  32 | reserved | reserved | reserved   |
-|    1 |  31 | tx_att[1]      | clar     | reserved   |
-|      |  30 | tx_att[0]    | clar     | reserved   |
-|      |  29 | reserved    | clar     | reserved   |
-|      |  28 | rx_att[1]    | clar     | reserved   |
-|      |  27 | rx_att[0]    | clar     | reserved   |
-|      |  26 | reserved    | clar     | reserved   |
-|      |  25 | if_freq[2]    | clar     | reserved   |
-|      |  24 | if_freq[1]    | freq     | reserved   |
-|    2 |  23 | if_freq[0]    | freq     | reserved   |
-|      |  22 | reserved    | freq     | reserved   |
-|      |  21 | cw_tx_nomod    | freq     | reserved   |
-|      |  20 | reserved    | freq     | reserved   |
-|      |  19 | fconf    | freq     | reserved   |
-|      |  18 | reserved    | freq     | reserved   |
-|      |  17 | reserved    | freq     | reserved   |
-|      |  16 | reserved    | freq     | reserved   |
-|    3 |  15 | reserved    | freq     | reserved   |
-|      |  14 | reserved    | freq     | reserved   |
-|      |  13 | reserved    | freq     | reserved   |
-|      |  12 | reserved    | freq     | reserved   |
-|      |  11 | reserved    | freq     | reserved   |
-|      |  10 | reserved    | freq     | reserved   |
-|      |   9 | reserved    | freq     | reserved   |
-|      |   8 | reserved    | freq     | reserved   |
-|    4 |   7 | reserved    | freq     | reserved   |
-|      |   6 | reserved    | freq     | reserved   |
-|      |   5 | reserved    | freq     | audio gain |
-|      |   4 | reserved    | freq     | audio gain |
-|      |   3 | reserved    | freq     | audio gain |
-|      |   2 | reserved    | freq     | audio gain |
-|      |   1 | reserved    | freq     | audio gain |
-|      |   0 | reserved    | freq     | audio gain |
+| Byte | Bit | Value       | Value      | Value    |
+|------+-----+-------------+------------+----------|
+|    0 |  39 | 0           | 1          | 1        |
+|      |  38 | 1           | 0          | 1        |
+|      |  37 | ssb_am      | reserved   | reserved |
+|      |  36 | wide_narrow | reserved   | reserved |
+|      |  35 | usb_lsb     | reserved   | reserved |
+|      |  34 | tx          | reserved   | reserved |
+|      |  33 | key         | reserved   | reserved |
+|      |  32 | reserved    | reserved   | reserved |
+|    1 |  31 | tx_att[1]   | reserved   | clar     |
+|      |  30 | tx_att[0]   | reserved   | clar     |
+|      |  29 | reserved    | reserved   | clar     |
+|      |  28 | rx_att[1]   | reserved   | clar     |
+|      |  27 | rx_att[0]   | reserved   | clar     |
+|      |  26 | reserved    | reserved   | clar     |
+|      |  25 | if_freq[2]  | reserved   | clar     |
+|      |  24 | if_freq[1]  | reserved   | freq     |
+|    2 |  23 | if_freq[0]  | reserved   | freq     |
+|      |  22 | reserved    | reserved   | freq     |
+|      |  21 | cw_tx_nomod | reserved   | freq     |
+|      |  20 | reserved    | reserved   | freq     |
+|      |  19 | fconf       | reserved   | freq     |
+|      |  18 | reserved    | reserved   | freq     |
+|      |  17 | reserved    | reserved   | freq     |
+|      |  16 | reserved    | reserved   | freq     |
+|    3 |  15 | reserved    | reserved   | freq     |
+|      |  14 | reserved    | reserved   | freq     |
+|      |  13 | reserved    | reserved   | freq     |
+|      |  12 | reserved    | reserved   | freq     |
+|      |  11 | reserved    | reserved   | freq     |
+|      |  10 | reserved    | reserved   | freq     |
+|      |   9 | reserved    | reserved   | freq     |
+|      |   8 | reserved    | reserved   | freq     |
+|    4 |   7 | reserved    | reserved   | freq     |
+|      |   6 | reserved    | reserved   | freq     |
+|      |   5 | reserved    | audio gain | freq     |
+|      |   4 | reserved    | audio gain | freq     |
+|      |   3 | reserved    | audio gain | freq     |
+|      |   2 | reserved    | audio gain | freq     |
+|      |   1 | reserved    | audio gain | freq     |
+|      |   0 | reserved    | audio gain | freq     |
 
 
 
@@ -66,11 +66,11 @@ Variable values are explained in the table further down.
 | usb_lsb:          | 1: USB, 0: LSB                                                                                    |
 | tx:               | 1: Forced TX, 0: RX or TX when PTT pin low                                                        |
 | key:              | 1: Forced CW key, 0: Controlled by KEY pin                                                        |
-| fconf:           | 1: Indirect frequency mode with external LO synth, 0: Direct mode                                  |
-| cw_tx_nomod:    | 1: Bypass weaver modulator in CW TX (clean spectrum), 0: Modulate with audio tone |
-| tx_att[1..0]:    | TX attenuation in steps of 6dB, 00: Full TX power                                                  |
-| rx_att[1..0]:    | RX attenuation in steps of 6dB, 00: Full RX gain           |
-| if_freq[2..0:    | 001: IF=45MHz, 010: IF=21.4MHz         |
+| fconf:            | 1: Indirect frequency mode with external LO synth, 0: Direct mode                                 |
+| cw_tx_nomod:      | 1: Bypass weaver modulator in CW TX (clean spectrum), 0: Modulate with audio tone                 |
+| tx_att[1..0]:     | TX attenuation in steps of 6dB, 00: Full TX power                                                 |
+| rx_att[1..0]:     | RX attenuation in steps of 6dB, 00: Full RX gain                                                  |
+| if_freq[2..0:     | 001: IF=45MHz, 010: IF=21.4MHz                                                                    |
 | clar[6..0]:       | Clarifier / RX offset value in 2s complement, steps of 120e6/2^28 Hz                              |
 | freq[24..0]:      | Carrier frequency, in steps of 120e6/2^25 Hz                                                      |
 | audio gain[5..0]: | Speaker audio attenuation, 011111 = mute, 000000 = 0dB, MSB always 0 (see TLV320AIC20K datasheet) |
@@ -89,13 +89,13 @@ Every fifth byte sent over UART results in the status byte being sent back.
 Simply transmit [0x00 0x00 0x00 0x00 0x00] to read without altering any register.
 
 
-| Bit nr |          |                                       |                                       
-|--------+----------+---------------------------------------+
-|      7 | TX/RX    | 1: TX, 0: RX – For TX/RX indication   |
-|      6 | Reserved |                                       |
-|      5 | RSSI     | MSB                                   |
-|      4 | RSSI     | Each step in RSSI corresponds to 6 dB |
-|      3 | RSSI     |                                       |
-|      2 | RSSI     |                                       |
-|      1 | RSSI     |                                       |
-|      0 | RSSI     | LSB                                   |
+| Bit | Value    | Meaning                               |
+|-----+----------+---------------------------------------|
+|   7 | TX/RX    | 1: TX, 0: RX – For TX/RX indication   |
+|   6 | Reserved |                                       |
+|   5 | RSSI     | MSB                                   |
+|   4 | RSSI     | Each step in RSSI corresponds to 6 dB |
+|   3 | RSSI     |                                       |
+|   2 | RSSI     |                                       |
+|   1 | RSSI     |                                       |
+|   0 | RSSI     | LSB                                   |
